@@ -1,0 +1,21 @@
+- platform: mqtt
+  name: "Spavaca soba, zid"
+  state_topic: "stat/spavaca_soba_01/POWER1"
+  command_topic: "cmnd/spavaca_soba_01/POWER1"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+  
+- platform: mqtt
+  name: "Spavaca soba, traka"
+  state_topic: "cmnd/spavaca_soba_02/POWER"
+  command_topic: "cmnd/spavaca_soba_02/POWER"
+  brightness_state_topic: "cmnd/spavaca_soba_02/RESULT"
+  brightness_command_topic: "cmnd/spavaca_soba_02/Dimmer"
+  brightness_scale: 100
+  brightness_value_template: "{{value_json.Dimmer}}"
+  retain: true
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"

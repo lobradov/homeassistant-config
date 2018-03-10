@@ -1,0 +1,9 @@
+- platform: mqtt
+  name: "Hodnik, sredina"
+  state_topic: "stat/kuhinja_01/POWER1"
+  command_topic: "cmnd/kuhinja_01/POWER1"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+  

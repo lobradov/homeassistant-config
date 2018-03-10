@@ -1,0 +1,17 @@
+- platform: mqtt
+  name: "Kuhinja, pult"
+  state_topic: "stat/kuhinja_01/POWER2"
+  command_topic: "cmnd/kuhinja_01/POWER2"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+  
+- platform: mqtt
+  name: "Kuhinja, luster"
+  state_topic: "stat/kuhinja_01/POWER3"
+  command_topic: "cmnd/kuhinja_01/POWER3"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true

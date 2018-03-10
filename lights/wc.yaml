@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: "WC, svetlo"
+  state_topic: "stat/wc_01/POWER4"
+  command_topic: "cmnd/wc_01/POWER4"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
+  
+# Power 3 je hodnik
