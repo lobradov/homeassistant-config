@@ -18,3 +18,25 @@ sensor.inevena_battery_state:
   hidden: true
 automation.turn_off_wc_fan_after_10_minutes:
   hidden: true
+group.all_automations:
+  hidden: true
+automation.kuhinja_luster:
+  hidden: true
+automation.kuhinja_pult:
+  hidden: true
+automation.radna_soba_plafon:
+  hidden: true
+automation.radna_soba_dimmer_max:
+  hidden: true
+automation.radna_soba_dimmer_min:
+  hidden: true
+automation.radna_soba_sva_svetla:
+  hidden: true
+automation.wc_ventilator:
+  hidden: true
+automation.wc_svetlo:
+  hidden: true
+automation.radna_soba_dimmer_up:
+  hidden: true
+automation.radna_soba_dimmer_down:
+  hidden: true

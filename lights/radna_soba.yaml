@@ -7,15 +7,21 @@
   payload_off: "OFF"
   retain: true
 
+
 - platform: mqtt
   name: "Radna soba, traka"
-  state_topic: "cmnd/radna_soba_02/POWER"
-  command_topic: "cmnd/radna_soba_02/POWER"
-  brightness_state_topic: "cmnd/radna_soba_02/RESULT"
-  brightness_command_topic: "cmnd/radna_soba_02/Dimmer"
-  brightness_scale: 100
-  brightness_value_template: "{{value_json.Dimmer}}"
-  retain: true
+  state_topic: radna_soba_traka/relay/0
+  command_topic: radna_soba_traka/relay/0/set
   qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
+  retain: true
+  payload_on: 1
+  payload_off: 0
+  availability_topic: radna_soba_traka/status
+  payload_available: 1
+  payload_not_available: 0
+  brightness_state_topic: radna_soba_traka/brightness
+  brightness_command_topic: radna_soba_traka/brightness/set
+  white_value_state_topic: radna_soba_traka/channel/3
+  white_value_command_topic: radna_soba_traka/channel/3/set
+  color_temp_command_topic: radna_soba_traka/mired/set
+

@@ -1,0 +1,110 @@
+- alias: Radna soba plafon
+  trigger:
+    platform: mqtt
+    topic: btn_radna_soba/button/5
+    payload: '2'
+  action:
+    service: light.toggle
+    entity_id:
+      - light.radna_soba_plafon
+
+
+- alias: Radna soba, sva svetla
+  trigger:
+    platform: mqtt
+    topic: btn_radna_soba/button/5
+    payload: '3'
+  action:
+    service: light.toggle
+    entity_id:
+      - light.radna_soba_plafon
+      - light.radna_soba_traka
+
+
+- alias: Radna soba, dimmer up
+  trigger: 
+    platform: mqtt
+    topic: btn_radna_soba/button/0
+    payload: '2'
+  action: 
+    - service: light.turn_on
+      entity_id:
+        - light.radna_soba_traka
+      data_template:
+        brightness: >
+          {% set suggested = states.light.radna_soba_traka.attributes.brightness + 32 %}
+          {% if suggested < 128 %}
+          {{ suggested }}
+          {% else %}
+          128
+          {% endif %}
+    - service: light.turn_on
+      entity_id:
+      - light.radna_soba_traka
+      data_template:
+        white_value: >
+          {% set suggested = states.light.radna_soba_traka.attributes.white_value + 64 %}
+          {% if suggested < 255 %}
+          {{ suggested }}
+          {% else %}
+          255
+          {% endif %}
+
+
+- alias: Radna soba, dimmer down
+  trigger: 
+    platform: mqtt
+    topic: btn_radna_soba/button/4
+    payload: '2'
+  action: 
+    - service: light.turn_on
+      entity_id:
+        - light.radna_soba_traka
+      data_template:
+        brightness: >
+          {% set suggested = states.light.radna_soba_traka.attributes.brightness - 32 %}
+          {% if suggested > 0 %}
+          {{ suggested }}
+          {% else %}
+          0
+          {% endif %}
+    - service: light.turn_on
+      entity_id:
+        - light.radna_soba_traka
+      data_template:
+        white_value: >
+          {% set suggested = states.light.radna_soba_traka.attributes.white_value - 64 %}
+          {% if suggested > 0 %}
+          {{ suggested }}
+          {% else %}
+          0
+          {% endif %}
+
+
+- alias: Radna soba, dimmer max
+  trigger:
+    platform: mqtt
+    topic: btn_radna_soba/button/0
+    payload: '3'
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.radna_soba_traka
+      data:
+        brightness: 128
+    - service: light.turn_on
+      entity_id:
+        - light.radna_soba_traka
+      data:
+        white_value: 255
+
+
+- alias: Radna soba, dimmer min
+  trigger:
+    platform: mqtt
+    topic: btn_radna_soba/button/4
+    payload: '3'
+  action:
+    service: light.turn_off
+    entity_id:
+      - light.radna_soba_traka

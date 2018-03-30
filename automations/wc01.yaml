@@ -1,0 +1,32 @@
+- alias: WC svetlo
+  trigger:
+    platform: mqtt
+    topic: btn_wc/button/5
+    payload: '2'
+  action:
+    service: light.toggle
+    entity_id:
+      - light.wc_svetlo
+
+
+- alias: WC ventilator
+  trigger:
+    platform: mqtt
+    topic: btn_wc/button/4
+    payload: '2'
+  action:
+    service: switch.toggle
+    entity_id:
+      - switch.wc_ventilator
+
+
+- alias: Turn off WC fan after 10 minutes
+  trigger:
+    platform: state
+    entity_id: switch.wc_ventilator
+    to: 'on'
+    for:
+      minutes: 10
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.wc_ventilator

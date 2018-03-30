@@ -1,0 +1,20 @@
+- alias: Kuhinja luster
+  trigger:
+    platform: mqtt
+    topic: btn_kuhinja01/button/0
+    payload: '2'
+  action:
+    service: light.toggle
+    entity_id:
+      - light.kuhinja_luster
+
+
+- alias: Kuhinja pult
+  trigger:
+    platform: mqtt
+    topic: btn_kuhinja01/button/5
+    payload: '2'
+  action:
+    service: light.toggle
+    entity_id:
+      - light.kuhinja_pult
