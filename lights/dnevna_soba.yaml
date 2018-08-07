@@ -1,30 +1,37 @@
-- platform: mqtt
-  name: "Dnevna soba, zid"
-  state_topic: "stat/dnevna_soba_01/POWER1"
-  command_topic: "cmnd/dnevna_soba_01/POWER1"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
-  
-- platform: mqtt
-  name: "Dnevna soba, mastaonica"
-  state_topic: "stat/dnevna_soba_01/POWER2"
-  command_topic: "cmnd/dnevna_soba_01/POWER2"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
+
+- name: "Dnevna soba, zid"
+  platform: mqtt
+  state_topic: sonoff-dnevna-soba/relay/0
+  command_topic: sonoff-dnevna-soba/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-dnevna-soba/status
+  payload_available: 1
+  payload_not_available: 0
+
+- name: "Dnevna soba, mastaonica"
+  platform: mqtt
+  state_topic: sonoff-dnevna-soba/relay/1
+  command_topic: sonoff-dnevna-soba/relay/1/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-dnevna-soba/status
+  payload_available: 1
+  payload_not_available: 0
 
 - platform: mqtt
   name: "Dnevna soba, traka"
-  state_topic: "cmnd/dnevna_soba_02/POWER"
-  command_topic: "cmnd/dnevna_soba_02/POWER"
-  brightness_state_topic: "cmnd/dnevna_soba_02/RESULT"
-  brightness_command_topic: "cmnd/dnevna_soba_02/Dimmer"
-  brightness_scale: 100
-  brightness_value_template: "{{value_json.Dimmer}}"
-  retain: true
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
+  state_topic: traka-dnevna-soba/relay/0
+  command_topic: traka-dnevna-soba/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: traka-dnevna-soba/status
+  payload_available: 1
+  payload_not_available: 0
+  brightness_state_topic: traka-dnevna-soba/brightness
+  brightness_command_topic: traka-dnevna-soba/brightness/set
+  rgb_state_topic: traka-dnevna-soba/rgb
+  rgb_command_topic: traka-dnevna-soba/rgb/set
+  color_temp_command_topic: traka-dnevna-soba/mired/set
+  white_value_state_topic: traka-dnevna-soba/channel/3
+  white_value_command_topic: traka-dnevna-soba/channel/3/set

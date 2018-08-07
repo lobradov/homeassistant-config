@@ -7,3 +7,19 @@
   payload_off: "OFF"
   retain: true
   
+- name: "Hodnik, traka" 
+  platform: mqtt
+  state_topic: traka-hodnik/relay/0
+  command_topic: traka-hodnik/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: traka-hodnik/status
+  payload_available: 1
+  payload_not_available: 0
+  brightness_state_topic: traka-hodnik/brightness
+  brightness_command_topic: traka-hodnik/brightness/set
+  rgb_state_topic: traka-hodnik/rgb
+  rgb_command_topic: traka-hodnik/rgb/set
+  color_temp_command_topic: traka-hodnik/mired/set
+  white_value_state_topic: traka-hodnik/channel/3
+  white_value_command_topic: traka-hodnik/channel/3/set

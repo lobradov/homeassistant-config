@@ -1,10 +1,36 @@
-- platform: mqtt
-  name: "WC, svetlo"
-  state_topic: "stat/wc_01/POWER4"
-  command_topic: "cmnd/wc_01/POWER4"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
-  
-# Power 3 je hodnik
+
+# 0 - ventilator
+
+# - name: sonoff-wc #1
+#   platform: mqtt
+#   state_topic: sonoff-wc/relay/1
+#   command_topic: sonoff-wc/relay/1/set
+#   payload_on: 1
+#   payload_off: 0
+#   availability_topic: sonoff-wc/status
+#   payload_available: 1
+#   payload_not_available: 0
+
+
+# Ovo je hodnik.
+# Treba da je uvek ukljucen.
+#
+# - name: sonoff-wc #2
+#   platform: mqtt
+#   state_topic: sonoff-wc/relay/2
+#   command_topic: sonoff-wc/relay/2/set
+#   payload_on: 1
+#   payload_off: 0
+#   availability_topic: sonoff-wc/status
+#   payload_available: 1
+#   payload_not_available: 0
+
+- name: "WC, svetlo"
+  platform: mqtt
+  state_topic: sonoff-wc/relay/3
+  command_topic: sonoff-wc/relay/3/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-wc/status
+  payload_available: 1
+  payload_not_available: 0

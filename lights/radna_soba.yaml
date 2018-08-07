@@ -1,27 +1,36 @@
-- platform: mqtt
-  name: "Radna soba, plafon"
-  state_topic: "stat/radna_soba_01/POWER2"
-  command_topic: "cmnd/radna_soba_01/POWER2"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
+# - name: sonoff-radna-soba #0
+#   platform: mqtt
+#   state_topic: sonoff-radna-soba/relay/0
+#   command_topic: sonoff-radna-soba/relay/0/set
+#   payload_on: 1
+#   payload_off: 0
+#   availability_topic: sonoff-radna-soba/status
+#   payload_available: 1
+#   payload_not_available: 0
 
+- name: "Radna soba, plafon"
+  platform: mqtt
+  state_topic: sonoff-radna-soba/relay/1
+  command_topic: sonoff-radna-soba/relay/1/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-radna-soba/status
+  payload_available: 1
+  payload_not_available: 0
 
 - platform: mqtt
   name: "Radna soba, traka"
-  state_topic: radna_soba_traka/relay/0
-  command_topic: radna_soba_traka/relay/0/set
-  qos: 1
-  retain: true
+  state_topic: radna-soba-traka/relay/0
+  command_topic: radna-soba-traka/relay/0/set
   payload_on: 1
   payload_off: 0
-  availability_topic: radna_soba_traka/status
+  availability_topic: radna-soba-traka/status
   payload_available: 1
   payload_not_available: 0
-  brightness_state_topic: radna_soba_traka/brightness
-  brightness_command_topic: radna_soba_traka/brightness/set
-  white_value_state_topic: radna_soba_traka/channel/3
-  white_value_command_topic: radna_soba_traka/channel/3/set
-  color_temp_command_topic: radna_soba_traka/mired/set
-
+  brightness_state_topic: radna-soba-traka/brightness
+  brightness_command_topic: radna-soba-traka/brightness/set
+  rgb_state_topic: radna-soba-traka/rgb
+  rgb_command_topic: radna-soba-traka/rgb/set
+  color_temp_command_topic: radna-soba-traka/mired/set
+  white_value_state_topic: radna-soba-traka/channel/3
+  white_value_command_topic: radna-soba-traka/channel/3/set

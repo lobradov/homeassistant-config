@@ -1,17 +1,40 @@
-- platform: mqtt
-  name: "Kuhinja, pult"
-  state_topic: "stat/kuhinja_01/POWER2"
-  command_topic: "cmnd/kuhinja_01/POWER2"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
-  
-- platform: mqtt
-  name: "Kuhinja, luster"
-  state_topic: "stat/kuhinja_01/POWER3"
-  command_topic: "cmnd/kuhinja_01/POWER3"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  retain: true
+
+# - name: sonoff-kuhinja #0
+#   platform: mqtt
+#   state_topic: sonoff-kuhinja/relay/0
+#   command_topic: sonoff-kuhinja/relay/0/set
+#   payload_on: 1
+#   payload_off: 0
+#   availability_topic: sonoff-kuhinja/status
+#   payload_available: 1
+#   payload_not_available: 0
+
+- name: "Kuhinja, pult"
+  platform: mqtt
+  state_topic: sonoff-kuhinja/relay/1
+  command_topic: sonoff-kuhinja/relay/1/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-kuhinja/status
+  payload_available: 1
+  payload_not_available: 0
+
+- name: "Kuhinja, luster"
+  platform: mqtt
+  state_topic: sonoff-kuhinja/relay/2
+  command_topic: sonoff-kuhinja/relay/2/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-kuhinja/status
+  payload_available: 1
+  payload_not_available: 0
+
+# - name: sonoff-kuhinja #3
+#   platform: mqtt
+#   state_topic: sonoff-kuhinja/relay/3
+#   command_topic: sonoff-kuhinja/relay/3/set
+#   payload_on: 1
+#   payload_off: 0
+#   availability_topic: sonoff-kuhinja/status
+#   payload_available: 1
+#   payload_not_available: 0

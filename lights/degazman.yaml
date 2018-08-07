@@ -1,12 +1,16 @@
-- platform: mqtt
-  name: "Degazman, traka"
-  state_topic: "cmnd/degazman_01/POWER"
-  command_topic: "cmnd/degazman_01/POWER"
-  brightness_state_topic: "cmnd/degazman_01/RESULT"
-  brightness_command_topic: "cmnd/degazman_01/Dimmer"
-  brightness_scale: 100
-  brightness_value_template: "{{value_json.Dimmer}}"
-  retain: true
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
+- name: Degazman Traka
+  platform: mqtt
+  state_topic: traka-degazman/relay/0
+  command_topic: traka-degazman/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: traka-degazman/status
+  payload_available: 1
+  payload_not_available: 0
+  brightness_state_topic: traka-degazman/brightness
+  brightness_command_topic: traka-degazman/brightness/set
+  rgb_state_topic: traka-degazman/rgb
+  rgb_command_topic: traka-degazman/rgb/set
+  color_temp_command_topic: traka-degazman/mired/set
+  white_value_state_topic: traka-degazman/channel/3
+  white_value_command_topic: traka-degazman/channel/3/set
