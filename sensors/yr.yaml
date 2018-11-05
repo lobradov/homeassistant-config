@@ -4,5 +4,4 @@
   monitored_conditions:
     - temperature
     - symbol
-    - precipitation
     - humidity

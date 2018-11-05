@@ -1,0 +1,9 @@
+- name: Prskalica
+  platform: mqtt
+  state_topic: sonoff-dvoriste01/relay/1
+  command_topic: sonoff-dvoriste01/relay/1/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-dvoriste01/status
+  payload_available: 1
+  payload_not_available: 0

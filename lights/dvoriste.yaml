@@ -1,0 +1,31 @@
+- name: Dvoriste
+  platform: mqtt
+  state_topic: sonoff-dvoriste01/relay/0
+  command_topic: sonoff-dvoriste01/relay/0/set
+  payload_on: 1
+  payload_off: 0
+  availability_topic: sonoff-dvoriste01/status
+  payload_available: 1
+  payload_not_available: 0
+
+# #1 je prskalica
+
+# - name: sonoff-dvoriste01 #2
+#  platform: mqtt
+#  state_topic: sonoff-dvoriste01/relay/2
+#  command_topic: sonoff-dvoriste01/relay/2/set
+#  payload_on: 1
+#  payload_off: 0
+#  availability_topic: sonoff-dvoriste01/status
+#  payload_available: 1
+#  payload_not_available: 0
+
+#- name: sonoff-dvoriste01 #3
+#  platform: mqtt
+#  state_topic: sonoff-dvoriste01/relay/3
+#  command_topic: sonoff-dvoriste01/relay/3/set
+#  payload_on: 1
+#  payload_off: 0
+#  availability_topic: sonoff-dvoriste01/status
+#  payload_available: 1
+#  payload_not_available: 0

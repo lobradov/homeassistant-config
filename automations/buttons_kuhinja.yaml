@@ -8,7 +8,6 @@
     entity_id:
       - light.kuhinja_luster
 
-
 - alias: Kuhinja pult
   trigger:
     platform: mqtt

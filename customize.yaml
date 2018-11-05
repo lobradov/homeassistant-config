@@ -40,3 +40,8 @@ automation.radna_soba_dimmer_up:
   hidden: true
 automation.radna_soba_dimmer_down:
   hidden: true
+zone.home:
+  beacon:
+    uuid: !secret home_beacon
+group.telefoni:
+  hidden: true

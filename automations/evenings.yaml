@@ -1,0 +1,36 @@
+- alias: "Vece"
+  hide_entity: true
+  trigger: 
+    platform: sun
+    event:  sunset
+    offset: "-00:20:00"
+  action: 
+    service: homeassistant.turn_on
+    entity_id: group.spoljna_svetla
+    
+- alias: "Jutro"
+  hide_entity: true
+  trigger: 
+    platform: sun
+    event:  sunrise
+    offset: "00:30:00"
+  action: 
+    service: homeassistant.turn_off
+    entity_id: group.spoljna_svetla
+    
+- alias: "Noc" # if we turned off the light after it was on, but then went to bed and forgot to turn it on
+  hide_entity: true
+  trigger: 
+    platform: state
+    entity_id:  group.unutrasnja_svetla
+    to: "off"
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+      - condition: sun
+        before: sunrise
+  action: 
+    service: homeassistant.turn_on
+    entity_id: group.spoljna_svetla

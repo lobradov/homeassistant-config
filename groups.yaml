@@ -1,0 +1,31 @@
+unutrasnja_svetla:
+  name: "Unutrasnja svetla"
+  control: hidden
+  entities: 
+    - light.degazman_traka
+    - light.dnevna_soba_mastaonica
+    - light.dnevna_soba_traka 
+    - light.dnevna_soba_zid 
+    - light.hodnik_sredina
+    - light.hodnik_traka 
+    - light.kuhinja_luster
+    - light.kuhinja_pult 
+    - light.radna_soba_plafon
+    - light.radna_soba_traka
+    - light.spavaca_soba_traka
+    - light.spavaca_soba_zid
+    - light.wc_svetlo
+
+telefoni:
+  name: "Telefoni"
+  view: no
+  entities:
+    - device_tracker.lgndphne
+    - device_tracker.lgndphne7
+    - device_tracker.nvnaphne
+
+spoljna_svetla:
+  name: "Spoljna svetla"
+  control: hidden
+  entities:
+    - light.dvoriste

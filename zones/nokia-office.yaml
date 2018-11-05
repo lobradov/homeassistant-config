@@ -1,0 +1,5 @@
+- name: Nokia office
+  latitude: !secret office_lat
+  longitude: !secret office_lon
+  radius: 100
+  icon: mdi:office-building
